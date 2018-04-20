@@ -1,0 +1,26 @@
+<img src="image.jpg" alt="hello" style="width:120px;height:120px"> 相同文件夹
+<img src="/images/image.jpg" alt="hello" style="width:120px;height:120px"> 根目录的image文件夹
+<img src="images/image.jpg" alt="hello" style="width:120px;height:120px"> 当前目录的image文件夹
+<img src="..images/image.jpg" alt="hello" style="width:120px;height:120px"> 上一级image文件夹
+
+<img src="image.jpg" alt="hello" style="width:120px;height:120px;border:0;float:left">
+
+<img src="image.jpg" alt="hello" usermap="#workmap">
+<map name="workmap">
+  <area shape="rect" coords="x11,y11,x21,y21" href="image2.jpg" alt="img2">
+  <area shape="rect" coords="x12,y12,x22,y22" href="image3.jpg" alt="img3">
+  <area shape="circle" coords="x13,y13,x23,y23" href="image4.jpg" alt="img4">
+</map>
+
+<!-- background image -->
+
+<body style="background-image:url('image.png')">
+  <h2>background image</h2>
+</body>
+
+<!-- picture element 可以有多个source,浏览器会选择最适合的一个-->
+<picture>
+  <source media="(min-width: 650px)" srcset="img1">
+  <source media="(min-width: 465)" srcset="img2">
+  <img src="img3" alt="Flowers" style="width:auto;">
+</picture>
