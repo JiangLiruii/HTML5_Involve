@@ -1,0 +1,50 @@
+<!-- 在无序列表中有4种 disc circle square none -->
+<ul style="list-style-type:disc">
+  <li></li>
+</ul>
+<!-- 在有序列表种有5种方式 1 A a I i,  start 表示从序号几开始加起 -->
+<ol type="1" start="50">
+  <li></li>
+</ol>
+<!-- dl --description list dt -- description term dd -- description describes -->
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+</dl>
+Nested HTML Lists
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <ul>
+    <li>Black tea</li>
+    <li>Green tea</li>
+  </ul>
+</ul>
+
+navigation menu
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111111;
+  }
+</style>
