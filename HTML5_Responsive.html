@@ -1,1 +1,26 @@
 how many methods to show responsive images
+
+<div>
+  viewport
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</div>
+<meta charset="utf8">
+<h1>1 设置为百分比宽度</h1>
+<h2>width 可以直接设置,max和min只能在style中设置</h2>
+<img src="./django_urls_001.png" alt="image" width="100%">
+<img src="./django_urls_001.png" alt="image" style="max-width:90%">
+
+<h1>使用"
+  <picture>"标签</h1>
+<picture>
+  <source media="(min-width: 600px)" srcset="600px.img">
+  <source media="(min-width: 1000px)" srcset="1000px.img">
+  <img src="default.img" alt="this is default img to show">
+</picture>
+
+<p>vw vh,vmax,vmin</p>
+
+<h1>当页面小于800px宽度时,会将left,right和content都铺满</h1>
+@media screen and (max-width: 800px) { .left .right .content { width: 100%; } }
+
+<h1>使用库,bootstrap会自动自适应</h1>
