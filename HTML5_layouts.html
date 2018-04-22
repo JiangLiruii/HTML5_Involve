@@ -1,1 +1,89 @@
-layout Styles HTML tables CSS float property CSS framework CSS flexbox
+layout Styles
+
+<pre>
+HTML tables
+- not use for page layout
+CSS float property
+- float:left, right,none, inherit
+- clear:left, right, none(default), inherit,both(left, right)
+- 大小超出clearfix overflow:auto
+  -- clearfix::after{content:'';clear:both;display:table}
+CSS framework
+- W3.CSS
+- Bootstrap
+CSS flexbox
+</pre>
+
+<p>navigation bar</p>
+<style>
+  ul {
+    list-style-type: none;
+  }
+
+  ul li {
+    float: left;
+    background-color: black;
+    margin: 2px;
+  }
+
+  ul li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 12v
+  }
+
+  li a:hover {
+    background-color: green;
+  }
+
+  .active {
+    background-color: red;
+  }
+</style>
+<header>
+  <ul>
+    <li>
+      <a href="#Home" class="active">Home</a>
+    </li>
+    <li>
+      <a href="#News">News</a>
+    </li>
+    <li>
+      <a href="#Contact">Contact</a>
+    </li>
+    <li>
+      <a href="#About">About</a>
+    </li>
+  </ul>
+</header>
+
+<p>web layout</p>
+
+* { box-sizing:border-box; } header, footer { background-color: grey; padding:10px; } section { margin:0; } #content::after
+{ content:' '; clear:both; display:table; } aside { float: left; width:25vw; } article { width:75vw; } ul{ margin-left:5px;
+padding-left:0px; list-style-type:none; } ul li { padding:10px; border-radius:10px; padding-right:30px; background-color:
+lightBlue; margin:5px 10px; }
+<header>
+  <div>
+    <h1>Chania</h1>
+  </div>
+</header>
+<section id="content">
+  <aside>
+    <ul>
+      <li>The Flight</li>
+      <li>The City</li>
+      <li>The Island</li>
+      <li>The Food</li>
+    </ul>
+  </aside>
+  <article>
+    <h2>The City</h2>
+    <p>This is the paragraph to introduce this City.</p>
+  </article>
+</section>
+<footer>
+  <p>Footer Text</p>
+</footer>
