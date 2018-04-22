@@ -4,5 +4,140 @@
 
 ## 目录
 
-- HTML5中新增的语义标签 [new element](/new_element.html)
-- HTML4 与 HTML5 的对比 [HTML4 vs HTML5](/HTML4_vs_HTML5.html),可以明显的看到会少些很多对标签类的定义,比如id,class,通过tag对样式进行控制.
+- HTML5中新增的语义标签 [new element](./new_element.html)
+- HTML4 与 HTML5 的对比 [HTML4 vs HTML5](./HTML4_vs_HTML5.html),可以明显的看到会少些很多对标签类的定义,比如id,class,通过tag对样式进行控制.
+
+
+- XHTML 更加严格的HTML,为了更好的让浏览器解析
+  - 必须包括head, title, html body <!DOCTYPE>也是必须的,W3C的标准
+  - 标签嵌套必须严格正确<b><i><b><i>会发生错误
+  - 所有标签必须闭合,如果空白标签也必须使用/> 闭合
+  - 标签必须是小写
+  - 标签属性名必须小写
+  - 属性值必须引号引起来
+  - 禁止属性简写,比如 checked="checked" 不能直接写checked
+
+- FORM
+  - 参数
+    - action
+      - url
+    - method
+      - get
+      - post
+    - target
+      - _blank
+      - _top
+      - _self(default)
+      - _parent
+      - framename
+    - accept-charset
+      - default by page charset
+    - autocomplete
+      - true by default
+    - enctype
+      - url-encoded by default
+    - novalidate 表格是否需要验证
+  - 包含标签
+    - input
+    - type
+      - text
+      - redio
+      - submit 跟form的submit对应
+      - password
+      - reset 重置表格为初始值
+      - checkbox
+      - button
+      - **html5** 不支持的浏览器显示为text
+        - color 选择颜色
+        - date 选择日期 min最小日期 max最大日期
+        - datetime-local 日期+时间
+        - email
+        - month 年月
+        - number min max maxlength disabled pattern(reg) readonly required size step(数据只能取min-max的step值) value 
+        - range 范围滑块 min max step
+        - search 普通的input一样
+        - tel telephone number
+        - time 选择时间
+        - url 输入url
+        - week 一年的第几周
+      - file
+    - attribute
+      - value
+      - readonly
+      - disabled
+      - size(characters) 
+      - maxlength
+      - HTML5
+        - autocomplete 第一次填写之后都会自动填充
+        - autofocus
+        - form 指定page中任意一个form id
+        - formaction 覆盖form中的提交url
+        - formenctype 编码方式,只在post中有效
+        - formmethod 在image和submit中可设置覆盖form的method
+        - formnovalidate 只submit中覆盖form的novalidate属性
+        - formtarget 覆盖target属性
+        - height and width 设置提交图片按钮的宽高.
+        - list 与datalist对应
+        - min and max
+        - multiple 选择多个文件
+        - pattern(reg) [A-Za-z]{3}
+        - placeholder
+        - required必填项
+        - step 默认从0开始
+    - input中的name省略,该input的内容不会提交, document.forms.name
+    - fieldset
+      - legend
+    - select
+      - option 第一个为默认选择,除非显式设置selected
+        - value e.target.value
+      - size 表示显示几个options
+      - multiple select more than one
+      - optgroup label
+        - option
+    - textarea
+      - rows
+      - cols 几行几列
+    - button
+      - onclick
+      - type='button'兼容性
+    - HTML5
+      - datalist input的可选项
+        - options
+      - output
+        - oninput
+        - output name="x" for="a b"
+
+- CANVAS
+  - ```let c = document.getElementById('myCanvas');let ctx = c.getContext('2d'); ```
+    - ```ctx.moveTo(0,0);ctx.lineTo(200,100);ctx.stroke();```
+    - ```ctx.beginPath();ctx.arc(95,50,40,0,2*Math.PI);ctx.stroke()```
+    - ```ctx.font = '30px Arial';ctx.fillText('Hello world', 10, 50)```
+    - ```ctx.font = '30px Arial';ctx.fillStrockText('hello world',10,50)```
+    - ```let grd = ctx.createLinearGradient(0,0,200,0);grd.addColorStop(0,'red');  grd.addColorStop(1,'white');ctx.fillStyle=grd;ctx.fillRect(10,10,150,80)```  线性矩形
+    - ```let grd = ctx.createLinearGradient(0,0,200,0);```  线性圆角
+    - ```let img = document.getElementById('scream');ctx.drawImage(img,10,10)```  
+    将图片复制过来
+- SVG
+  - circle
+    - cx
+    - cy
+    - r
+    - stroke
+    - stroke-width
+    - fill
+  - rect
+    - width height style="fill:rgb();stroke-width:10;stroke:rgb()"
+  - rect 圆角
+    - rx ry x y
+  - [五角星](./SVG_Star.html),关于fill-rull nonzero 和 evenodd 还不够清楚.
+- HTML Media
+  - video
+    - mp4, webM, ogg
+    - track 字幕
+  - audio
+    - mp3,ogg,wav
+  - attributes
+    - autoplay
+    - controls
+  - resource都有这个属性可以选择播放
+  - 如果不兼容可考虑使用<object> 和<embed src="">
