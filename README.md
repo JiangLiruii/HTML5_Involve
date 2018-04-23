@@ -4,9 +4,23 @@
 
 ## 目录
 
+- [HTML5_Attributes](./HTML5_attributes.html)
+- [HTML5_Block_inline](./HTML5_block_inline.html)
+- [HTML5_Colors](./HTML5_Colors.html)
+- [HTML5_CSS](./HTML5_CSS.html)
+- [HTML5_Head](./HTML5_head.html)
+- [HTML5_Img](./HTML5_img.html)
+- [HTML5_Layout](./HTML5_layout.html)
+- [HTML5_Link](./HTML5_Link.html)
+- [HTML5_List](./HTML5_List.html)
+- [HTML5_Responsive](./HTML5_Responsive.html)
+- [HTML5_Style](./HTML5.style.guide.html)
+- [HTML5_Table](./HTML5_Table.html)
+- [HTML5_Some_New_Element](./new_element.html)
 - HTML5中新增的语义标签 [new element](./new_element.html)
-- HTML4 与 HTML5 的对比 [HTML4 vs HTML5](./HTML4_vs_HTML5.html),可以明显的看到会少些很多对标签类的定义,比如id,class,通过tag对样式进行控制.
+- HTML4 与 HTML5 的对比 [HTML4 vs HTML5](./HTML4_vs_HTML5.html),可以明显的看到会少些很多对标签类的定义,比如id,class,通过tag对样式进行控制
 
+### 下面是对HTML5中重点知识点的列举
 
 - XHTML 更加严格的HTML,为了更好的让浏览器解析
   - 必须包括head, title, html body <!DOCTYPE>也是必须的,W3C的标准
@@ -16,7 +30,6 @@
   - 标签属性名必须小写
   - 属性值必须引号引起来
   - 禁止属性简写,比如 checked="checked" 不能直接写checked
-
 - FORM
   - 参数
     - action
@@ -108,14 +121,14 @@
         - output name="x" for="a b"
 
 - CANVAS
-  - ```let c = document.getElementById('myCanvas');let ctx = c.getContext('2d'); ```
+  - ```let c = document.getElementById('myCanvas');let ctx = c.getContext('2d');```
     - ```ctx.moveTo(0,0);ctx.lineTo(200,100);ctx.stroke();```
     - ```ctx.beginPath();ctx.arc(95,50,40,0,2*Math.PI);ctx.stroke()```
     - ```ctx.font = '30px Arial';ctx.fillText('Hello world', 10, 50)```
     - ```ctx.font = '30px Arial';ctx.fillStrockText('hello world',10,50)```
     - ```let grd = ctx.createLinearGradient(0,0,200,0);grd.addColorStop(0,'red');  grd.addColorStop(1,'white');ctx.fillStyle=grd;ctx.fillRect(10,10,150,80)```  线性矩形
     - ```let grd = ctx.createLinearGradient(0,0,200,0);```  线性圆角
-    - ```let img = document.getElementById('scream');ctx.drawImage(img,10,10)```  
+    - ```let img = document.getElementById('scream');ctx.drawImage(img,10,10)```
     将图片复制过来
 - SVG
   - circle
@@ -141,3 +154,49 @@
     - controls
   - resource都有这个属性可以选择播放
   - 如果不兼容可考虑使用<object> 和<embed src="">
+- HTML APIs
+  - HTML Geolocation
+    - navigator.geolocation.getCurrentPosition(position=>{position.coords.latitude(longtitude)},error=>{error.code})
+    - error.coode
+      - error.PERMISSION_DENIED
+      - error.POSITION_UNAVALIABLE
+      - error.TIMEOUT
+      - error.UNKNOWN_ERROR
+    - success
+      - coords.latitude
+      - coords.longitude
+      - coords.accuracy 精度
+      --- available
+      - coords.altitude 海拔
+      - coords.altitudeAccuracy 海拔精度
+      - coords.heading 朝北的顺时针角度
+      - coords.speed 速度
+      - timestamp 响应时间
+    - watchPosition()-clearWatch() GPS持续更新位置
+  - [HTML Drag and Drop](./HTML5_Drag_and_Drop.html)
+    - draggable = true
+    - ondragstart ondragover
+    - ev.dataTransfer.setData()
+    - ev.dataTransfer.getDate()
+  - HTML5 Web Storage
+    - window.localStorage 在失效日期后失效
+      - localStorage.setItem
+      - localStorage.getItem
+      - localStorage.removeItem
+    - window.sessionStorage 数据将在标签关闭时失效
+  - HTML5 Web Workers 不影响前台网页效果的后台独立脚本
+    - window.Worker
+      - w = new Worker(js脚本);
+      - js脚本中的postMessage()触发消息
+      - w.onmessage()响应消息
+      - w.terminate()终止
+  - [HTML5 Server-Sent Events](./SSE_Node.js) 获取服务端发出的更新信息
+    - new EventSource(url)必须在同一个域
+    - Content-Type text/event-stream
+    - Cache-Control no-cache
+    - data to send(以data:开始,以\n\n结尾)
+    - 调用flush()返回数据
+    - 事件
+      - onopen
+      - onmessage
+      - onerror
