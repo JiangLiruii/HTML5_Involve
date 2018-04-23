@@ -1,0 +1,26 @@
+{
+  "name": "htmlinvoving",
+  "version": "1.0.0",
+  "description": "- HTML5中新增的语义标签 [new element](./new_element.html)\r - HTML4 与 HTML5 的对比 [HTML4 vs HTML5](./HTML4_vs_HTML5.html),可以明显的看到会少些很多对标签类的定义,比如id,class,通过tag对样式进行控制\r - XHTML 更加严格的HTML,为了更好的让浏览器解析\r   - 必须包括head, title, html body <!DOCTYPE>也是必须的,W3C的标准\r   - 标签嵌套必须严格正确<b><i><b><i>会发生错误\r   - 所有标签必须闭合,如果空白标签也必须使用/> 闭合\r   - 标签必须是小写\r   - 标签属性名必须小写\r   - 属性值必须引号引起来\r   - 禁止属性简写,比如 checked=\"checked\" 不能直接写checked",
+  "main": "HTML5_Script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiangLiruii/HTML5_Involve.git"
+  },
+  "keywords": [
+    "html5"
+  ],
+  "author": "lorryjiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiangLiruii/HTML5_Involve/issues"
+  },
+  "homepage": "https://github.com/JiangLiruii/HTML5_Involve#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  }
+}
